@@ -1,0 +1,1 @@
+void xorcrypt(char msg[], const char key[]);

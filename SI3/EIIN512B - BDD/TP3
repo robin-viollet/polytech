@@ -1,0 +1,84 @@
+# Q1
+#  1
+WITH RECURSIVE managers(employee_id, manager_id) AS (
+    select e.employee_id, me.employee_id
+    from public.employees e
+    join public.employees me
+    on e.manager_id = me.employee_id
+UNION ALL
+    select m.employee_id, me.manager_id
+    from managers m
+    join public.employees me
+    on me.employee_id = m.manager_id
+)
+SELECT *
+from managers ma
+where ma.manager_id is not null
+order by ma.employee_id asc;
+
+#  2
+WITH RECURSIVE managers(employee_id, manager_id) AS (
+    select e.employee_id, me.employee_id
+    from public.employees e
+    join public.employees me
+    on e.manager_id = me.employee_id
+UNION ALL
+    select m.employee_id, me.manager_id
+    from managers m
+    join public.employees me
+    on me.employee_id = m.manager_id
+)
+SELECT distinct e.last_name, m.last_name
+from managers ma
+join employees e
+on ma.employee_id = e.employee_id
+join employees m
+on ma.manager_id = m.employee_id
+where ma.manager_id is not null
+order by e.last_name asc;
+
+#  3
+WITH RECURSIVE managers(employee_id, manager_id, distance) AS (
+    select e.employee_id, me.employee_id, 1
+    from public.employees e
+    join public.employees me
+    on e.manager_id = me.employee_id
+UNION ALL
+    select m.employee_id, me.manager_id, m.distance + 1
+    from managers m
+    join public.employees me
+    on me.employee_id = m.manager_id
+)
+SELECT distinct e.last_name, m.last_name, distance
+from managers ma
+join employees e
+on ma.employee_id = e.employee_id
+join employees m
+on ma.manager_id = m.employee_id
+where ma.manager_id is not null
+order by ma.distance asc, m.last_name asc, e.last_name;
+
+#  4 x
+WITH RECURSIVE managers(employee_id, manager_id, distance) AS (
+    select e.employee_id, me.employee_id, 1
+    from public.employees e
+    join public.employees me
+    on e.manager_id = me.employee_id
+UNION ALL
+    select m.employee_id, me.manager_id, m.distance + 1
+    from managers m
+    join public.employees me
+    on me.employee_id = m.manager_id
+)
+SELECT ma.employee_id, e.last_name,
+distance, string_agg(m.last_name, ' - '), string_agg(m.manager_id::varchar, '|')
+from managers ma
+join employees e
+on ma.employee_id = ma.employee_id
+join employees m
+on ma.manager_id = m.employee_id
+where ma.manager_id = 100
+order by ma.distance asc;
+
+# Q2
+

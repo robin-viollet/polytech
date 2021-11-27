@@ -1,0 +1,1 @@
+double Puissance(double x, unsigned int n);

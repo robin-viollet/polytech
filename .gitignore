@@ -1,0 +1,10 @@
+/SI3/EIIN513 - Architecture et Réseaux/archi/TP2/parm_public
+/SI3/EIIN513 - Architecture et Réseaux/archi/PARM
+out/
+/VMs/
+/SI3/EIIN525 - PS5/
+cmake-build-*/
+.idea/
+*.zip
+*.tar.gz
+*.iml

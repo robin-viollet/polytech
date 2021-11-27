@@ -1,0 +1,1 @@
+int evaluer(char operateur, int operande, ...);

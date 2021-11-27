@@ -1,0 +1,119 @@
+node n4 {
+    type lanswitch
+    network-config {
+	hostname n4
+	!
+    }
+    canvas c1
+    iconcoords {287.0 105.0}
+    labelcoords {287.0 129.0}
+    interface-peer {e2 n5}
+    interface-peer {e0 n2}
+    interface-peer {e1 n3}
+}
+
+node n5 {
+    type lanswitch
+    network-config {
+	hostname n5
+	!
+    }
+    canvas c1
+    iconcoords {456.0 104.0}
+    labelcoords {456.0 128.0}
+    interface-peer {e0 n4}
+    interface-peer {e1 n1}
+}
+
+node n2 {
+    type router
+    model host
+    network-config {
+	hostname c1
+	!
+	interface eth0
+	 ipv6 address 2001:0::10/64
+	 ip address 10.0.0.20/24
+	!
+    }
+    canvas c1
+    iconcoords {93.0 206.0}
+    labelcoords {93.0 238.0}
+    interface-peer {eth0 n4}
+}
+
+node n3 {
+    type router
+    model host
+    network-config {
+	hostname c2
+	!
+	interface eth0
+	 ipv6 address 2001:0::11/64
+	 ip address 10.0.0.21/24
+	!
+    }
+    canvas c1
+    iconcoords {223.0 205.0}
+    labelcoords {223.0 237.0}
+    interface-peer {eth0 n4}
+}
+
+node n1 {
+    type router
+    model host
+    network-config {
+	hostname svr1
+	!
+	interface eth0
+	 ip address 10.0.0.10/24
+	 ipv6 address 2001:0::12/64
+	!
+    }
+    canvas c1
+    iconcoords {508.0 207.0}
+    labelcoords {508.0 239.0}
+    interface-peer {eth0 n5}
+}
+
+link l3 {
+    delay 50000
+    nodes {n5 n4}
+    bandwidth 1000000
+}
+
+link l1 {
+    nodes {n2 n4}
+    bandwidth 0
+}
+
+link l2 {
+    nodes {n3 n4}
+    bandwidth 0
+}
+
+link l4 {
+    nodes {n5 n1}
+    bandwidth 0
+}
+
+canvas c1 {
+    name {Canvas1}
+}
+
+option global {
+    interface_names no
+    ip_addresses yes
+    ipv6_addresses yes
+    node_labels yes
+    link_labels yes
+    show_api no
+    background_images no
+    annotations yes
+    grid yes
+    traffic_start 0
+}
+
+option session {
+}
+

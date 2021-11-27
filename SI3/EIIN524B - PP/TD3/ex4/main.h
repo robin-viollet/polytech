@@ -1,0 +1,1 @@
+void suppress_char(char str[], char c);

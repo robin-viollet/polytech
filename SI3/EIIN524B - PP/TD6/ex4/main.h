@@ -1,0 +1,1 @@
+void Printf(char format[], ...);

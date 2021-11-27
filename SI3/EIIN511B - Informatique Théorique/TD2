@@ -1,0 +1,46 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{TD2}
+\author{Robin Viollet}
+
+\begin{document}
+
+\maketitle
+Made with \TeX
+
+\section{Vrai/Faux}
+
+%a) $p(a, b) ∧¬p(f (a), b)$
+a)
+%b) $∃y p(y, b)$
+%c) $∃y∃x p(y, x)$
+%d) $∀x∃y p(x, y)$
+%e) $∀x p(x, x)$
+%f) $∃y∀x p(x, y)$
+%g) $∃y ((p(y, a) ∨p(f (y), b))$
+
+\subsection{Les formules précédentes sont elles vraies dans l'interprétation I1?}
+\paragraph{Interprétation I1 :}
+\begin{itemize}
+\item le domaine est l'ensemble N des entiers naturels
+\item a est l'entier 0
+\item b est l'entier 1
+\item f est la fonction successeur
+\item p est la relation <
+\end{itemize}
+
+\subsection{Même question p our l'interprétation I2 :}
+
+\begin{itemize}
+\item domaine : les listes de longueur quelconque contenant des 0 et des 1
+\item a est la liste vide
+\item b est la liste [1, 1, 1, 1, 1 ]
+\item f est la fonction cons1 qui a joute un 1 en tête d'une liste
+\item p est la relation length(x) < length(y)
+\end{itemize}
+
+\section{Ex2}
+
+\end{document}

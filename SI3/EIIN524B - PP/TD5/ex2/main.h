@@ -1,0 +1,1 @@
+void cat_strings(char str1[], ...);

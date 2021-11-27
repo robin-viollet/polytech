@@ -1,0 +1,1 @@
+void Debug(char *format, ...);
