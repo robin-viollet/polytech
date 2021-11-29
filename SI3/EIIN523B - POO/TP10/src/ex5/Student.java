@@ -98,6 +98,12 @@ public class Student implements Comparable<Student>{
     @Override
     public int compareTo(Student student){
 
+        if (student == null){
+
+            return 1;
+
+        }
+
         int nameResult = NAME_COMPARATOR.compare(this, student);
         int noteResult = NOTE_COMPARATOR.compare(this, student);
         int ageResult = AGE_COMPARATOR.compare(this, student);

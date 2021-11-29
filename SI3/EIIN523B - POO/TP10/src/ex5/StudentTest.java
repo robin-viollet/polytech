@@ -3,6 +3,8 @@ package ex5;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class StudentTest {
 
     Student student = null;
@@ -26,14 +28,19 @@ public class StudentTest {
 
     @Test
     void constructorK0(){ //: le constructeur a provoqué une erreur
+        assertThrows(StudentException.class, () -> new Student("test", "32-01-2021"));
     }
 
     @Test
     void equalsTest(){ //: deux étudiants sont identiques (même nom)
+        student = new Student("test", "01-01-1970");
+        assertEquals(0, student.compareTo(new Student("test", "01-01-1970")));
     }
 
     @Test
     void notEqualsTest(){ //: plusieurs tests à réaliser parmi lesquels null et une instance de Object
+        student = new Student("test", "01-01-1970");
+        assertNotEquals(0, student.compareTo(null));
     }
 
     @Test
