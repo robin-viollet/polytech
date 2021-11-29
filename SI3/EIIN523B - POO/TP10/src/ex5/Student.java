@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 public class Student implements Comparable<Student>{
 
     static final Comparator<Student> NAME_COMPARATOR = Comparator.comparing(student -> student.name);
-    static final Comparator<Student> NOTE_COMPARATOR = (student, t1) -> (int) (t1.getAdverage() - student.getAdverage());
-    static final Comparator<Student> AGE_COMPARATOR = (student, t1) -> t1.age - student.age;
+    static final Comparator<Student> NOTE_COMPARATOR = (student, t1) -> (int) (student.getAdverage() - t1.getAdverage());
+    static final Comparator<Student> AGE_COMPARATOR = Comparator.comparingInt(student -> student.age);
 
     public Student(String name, String birthdate) throws StudentException{
 

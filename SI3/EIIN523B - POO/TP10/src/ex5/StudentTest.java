@@ -3,7 +3,7 @@ package ex5;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-class StudentTest {
+public class StudentTest {
 
     Student student = null;
 
