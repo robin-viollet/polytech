@@ -5,27 +5,36 @@
 
 int main(){
 
-    //Element* root = NULL;
     List root = NULL;
 
-    append_element(root, 10);
+    append_element(&root, 10);
+    print_list(&root);
 
-    print_list(root);
+    append_element(&root, 15161);
+    print_list(&root);
 
-    append_element(root, 15161);
+    append_element(&root, 5515);
+    print_list(&root);
 
-    print_list(root);
+    assert(find_element(&root, 10) == 0);
 
-    append_element(root, 5515);
+    delete_element(&root, 15161);
+    print_list(&root);
 
-    print_list(root);
+    assert(find_element(&root, 15161) == -1);
 
-    assert(find_element(root, 10) == 0);
-    delete_element(root, 15161);
+    List benTen = NULL;
 
-    assert(find_element(root, 15161) == -1);
+    append_element(&benTen, 10);
+    append_element(&benTen, 10);
+    append_element(&benTen, 10);
+    append_element(&benTen, 10);
+    append_element(&benTen, 10);
+    append_element(&benTen, 10);
 
-    print_list(root);
+    delete_elements(&benTen, 10);
+
+    print_list(&benTen);
 
     printf("All tests passed!");
 

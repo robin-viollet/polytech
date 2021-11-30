@@ -5,7 +5,7 @@
 #include "main.h"
 
 // TODO
-void prepend_element(List root, int n){
+void prepend_element(List* root, int n){
     if (root != NULL){
 
         Element* next = malloc(sizeof(Element));
@@ -29,7 +29,7 @@ void prepend_element(List root, int n){
     }
 }
 
-void append_element(List root, int n){
+void append_element(List* root, int n){
     if (root != NULL){
 
         Element* next = malloc(sizeof(Element));
@@ -53,42 +53,62 @@ void append_element(List root, int n){
     }
 }
 
-int find_element(List root, int v){
+int find_element(List* root, int v){
     int i = -1;
     if (root != NULL){
-        while ((*root)->suivant != NULL){
+        while (*root != NULL){
+            ++i;
             if ((*root)->valeur == v){
-                break;
+                return i;
             }
             root = &(*root)->suivant;
-            ++i;
         }
     }
-    return i;
+    return -1;
 }
 
-void delete_element(List root, int n){
-    while ((*root)->suivant != NULL){
-        root = &(*root)->suivant;
+void delete_element(List* root, int n){
+    if (root != NULL){
+        if (*root != NULL && (*root)->valeur == n){
+            *root = (*root)->suivant;
+            return;
+        }
+
+        while (*root != NULL){
+            if ((*root)->suivant != NULL && (*root)->suivant->valeur == n){
+                (*root)->suivant = (*root)->suivant->suivant;
+                return;
+            }
+
+            root = &(*root)->suivant;
+        }
     }
-
-
-
-    Element* element = *root;
-    *root = NULL;
 }
 
-void delete_elements(List root, int n){
-    while ((*root)->suivant != NULL){
-        root = &(*root)->suivant;
+// TODO Fix last element not being deleted
+void delete_elements(List* root, int n){
+    if (root != NULL){
+        if (*root != NULL && (*root)->valeur == n){
+            *root = (*root)->suivant;
+        }
+
+        while (*root != NULL){
+
+            if ((*root)->suivant != NULL && (*root)->suivant->valeur == n){
+                (*root)->suivant = (*root)->suivant->suivant;
+            } else {
+                root = &(*root)->suivant;
+            }
+        }
+
+        if (*root != NULL && (*root)->valeur == n){
+            *root = (*root)->suivant;
+        }
     }
-
-    Element* element = *root;
-    *root = NULL;
 }
 
-void print_list(List root){
-    while (root != NULL){
+void print_list(List* root){
+    while (*root != NULL){
         printf("%d->", (*root)->valeur);
         root = &(*root)->suivant;
     }
