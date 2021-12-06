@@ -3,6 +3,7 @@
 out/
 /VMs/
 /SI3/EIIN525 - PS5/
+/SI3/nuitdelinfo
 cmake-build-*/
 .idea/
 *.zip
