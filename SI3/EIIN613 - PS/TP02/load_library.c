@@ -28,6 +28,4 @@ void load_library(char *library_name){
 		fprintf(stderr, "%s\n", error);
 		exit(1);
 	}
-
-	dlclose(handle);
 }

@@ -882,8 +882,6 @@ void load_library(char *library_name){
         fprintf(stderr, &quot;%s\n&quot;, error);
         exit(1);
     }
-
-    dlclose(handle);
 }</pre><pre class="hljs"><code>#include &lt;stdlib.h&gt;
 #include &lt;stdio.h&gt;
 #include &lt;dlfcn.h&gt;
@@ -914,8 +912,6 @@ void load_library(char *library_name){
         fprintf(stderr, &quot;%s\n&quot;, error);
         exit(1);
     }
-
-    dlclose(handle);
 }</code></pre></div>
 <p><code class="inline-code">Makefile</code></p>
 <div class="joplin-editable"><pre class="joplin-source" data-joplin-language="" data-joplin-source-open="```&#10;" data-joplin-source-close="&#10;```">DYNAMIC_LOAD=tri.exe
