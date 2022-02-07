@@ -6,6 +6,11 @@ out/
 /SI3/nuitdelinfo
 cmake-build-*/
 .idea/
+pluginAssets/
 *.zip
 *.tar.gz
 *.iml
+*.o
+*.so
+*.a
+*.exe
