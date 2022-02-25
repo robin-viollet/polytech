@@ -11,11 +11,16 @@ out/
 pluginAssets/
 *.zip
 *.tar.gz
+*.tgz
 *.iml
 *.o
 *.so
 *.a
 *.exe
+
+*.pdf
+*.html
+_resources/
 
 *.ogg
 *.mp3
