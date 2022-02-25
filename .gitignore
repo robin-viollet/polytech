@@ -7,6 +7,7 @@ ssiienv/
 qgl-21-22-deadbeef/
 cmake-build-*/
 out/
+bin/
 .idea/
 pluginAssets/
 *.zip
@@ -17,6 +18,7 @@ pluginAssets/
 *.so
 *.a
 *.exe
+*.class
 
 *.pdf
 *.html
@@ -29,5 +31,6 @@ _resources/
 *.wav
 *.wma
 *.webm
+*.mpg
 
 .ipynb_checkpoints/
