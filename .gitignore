@@ -1,10 +1,12 @@
-/SI3/EIIN513 - Architecture et Réseaux/archi/TP2/parm_public
-/SI3/EIIN513 - Architecture et Réseaux/archi/PARM
-out/
+/S5/AR/archi/TP2/parm_public
+/S5/AR/archi/PARM
 /VMs/
-/SI3/EIIN525 - PS5/
-/SI3/nuitdelinfo
+/S5/PS5/
+nuitdelinfo/
+ssiienv/
+qgl-21-22-deadbeef/
 cmake-build-*/
+out/
 .idea/
 pluginAssets/
 *.zip
@@ -14,3 +16,11 @@ pluginAssets/
 *.so
 *.a
 *.exe
+
+*.ogg
+*.mp3
+*.m4a
+*.flac
+*.wav
+*.wma
+*.webm
