@@ -29,3 +29,5 @@ _resources/
 *.wav
 *.wma
 *.webm
+
+.ipynb_checkpoints/
