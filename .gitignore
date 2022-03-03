@@ -2,9 +2,12 @@
 /S5/AR/archi/PARM
 /VMs/
 /S5/PS5/
+/S6/IHM/Ratatouille
+
 nuitdelinfo/
 ssiienv/
 qgl-21-22-deadbeef/
+
 cmake-build-*/
 out/
 bin/
