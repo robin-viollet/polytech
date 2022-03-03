@@ -16,8 +16,7 @@ int main(){
 				printf("Fils %d - %d\n", i, getpid());
 			}
 			exit(0);
-		} else if (pid != -1){
-			wait(NULL);
 		}
+		wait(NULL);
 	}
 }
