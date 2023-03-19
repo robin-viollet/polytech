@@ -255,11 +255,16 @@ public class BinaryNode<AnyType> {
     	return new BinaryNode<String>(s,read(input),read(input));
     }
 
+	private boolean weighted1(BinaryNode<AnyType> t) {
+		return t == null || Math.abs(size(t.left) - size(t.right)) <= 1;
+	}
+
     /**
      * A short main for quick testing the read and display methods
      */
 	public static void main(String[] args) {
-		BinaryNode<String> t = read("A B D X 1 10$ 20$ $ Y$ E V$ W$ C F$ G$");
+		BinaryNode<String> t = read("A $ C $ D$");
 		t.display();
+		System.out.println(t.weighted1(t));
 	}
 }
